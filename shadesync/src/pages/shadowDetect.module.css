@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
+  height: calc(100vh - 5rem); /* Adjust 5rem to your header height */
+  width: 100%;
+}
+
+.controls {
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.controls h2 {
+  margin-top: 0;
+}
+
+.buttonGroup {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* This is important for responsiveness */
+  gap: 1rem;
+}
+
+.buttonGroup button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.analyzeButton {
+  background-color: #a0fa56b7;
+  color: #333;
+}
+
+.analyzeButton:hover {
+  background-color: #89e243;
+}
+
+.clearButton {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.clearButton:hover {
+  background-color: #cccccc;
+}
+
+.locationButton {
+  background-color: #3498db;
+  color: white;
+}
+
+.locationButton:hover {
+  background-color: #2980b9;
+}
+
+.mapContainer {
+  flex-grow: 1; /* Makes the map take all remaining vertical space */
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+/* --- ADD THIS MEDIA QUERY AT THE END --- */
+/* This will apply ONLY on screens 600px wide or smaller (like phones) */
+@media (max-width: 600px) {
+  .buttonGroup {
+    gap: 0.5rem; /* Reduce the space between buttons */
+  }
+
+  .buttonGroup button {
+    padding: 0.75rem 0.5rem; /* Reduce horizontal padding */
+    font-size: 0.9rem; /* Make the text a little smaller */
+    flex-grow: 1; /* Allow buttons to grow and fill space */
+  }
+}

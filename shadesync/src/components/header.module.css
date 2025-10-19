@@ -1,0 +1,26 @@
+/* Copy-paste these styles from homePage.module.css */
+
+.header {
+  border-bottom: 0.25rem solid #f3f2f2;
+  padding: 0.9375rem; /* 15px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo_container {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem; /* 10px */
+}
+
+.logo {
+  height: 3rem;
+  border-radius: 0.6rem;
+  display: block;
+}
+
+.font_head {
+  font-size: 1.5rem;
+  margin: 0;
+}
