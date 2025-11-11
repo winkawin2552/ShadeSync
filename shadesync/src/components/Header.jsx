@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import styles from "./header.module.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo(1).png";
 import Hamburger from "./Hamburger";
 import Navbar from "./Navbar";
 
@@ -16,7 +16,7 @@ function Header() {
   switch (location.pathname) {
     case "/ShadowDetect":
       currentLogo = logo;
-      currentTitle = "Shadow Detect";
+      currentTitle = "ShadowDetect";
       break;
 
     default:

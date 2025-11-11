@@ -55,6 +55,7 @@
 .locationButton {
   background-color: #3498db;
   color: white;
+  padding-top: 100px;
 }
 
 .locationButton:hover {
