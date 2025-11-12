@@ -68,7 +68,14 @@ function HomePage() {
         Clear All
         </button>
       </div>
-      <h1 style = {{color: "#595959" , fontFamily: 'agdasima bold,monospace',fontSize:"1.5rem" ,paddingleft: "100px"}}>Coverage area analysis</h1>
+      <h1 style = {{color: "#595959" , fontFamily: 'agdasima bold,monospace',fontSize:"1.5rem" ,paddingLeft: "20px",paddingTop: "30px"}}>Coverage area analysis</h1>
+      <div className={styles.box1and2container}>
+        <div className={styles.box1}>
+          <h1 style={{color: "#0077FF" , paddingLeft: "20px", paddingTop: "15px"}}>3.2 km</h1>
+        </div>
+        <div className={styles.box2}>
+        </div>
+      </div>
     </main>
   );
 }

@@ -12,6 +12,7 @@
   flex-grow: 0.5;
   padding: 1rem;
   background-color: #f0f0f0;
+  height: 100px;
 }
 
 .analyzeButton {
@@ -50,3 +51,27 @@
   background-color: #a02b2b;
 }
 
+.box1and2container {
+  display: flex;
+  margin-top: 1rem;
+  flex-grow: 0.5;
+  background-color: #ffffff;
+  gap: 15px;
+}
+
+.box1{
+  height: 70px;
+  width: 175px;
+  background-color: #CBE3FF;
+  border-radius: 8px;
+  margin-left: 15px;
+  border-radius: 15px;
+}
+
+.box2{
+  height: 70px;
+  width: 175px;
+  background-color: #FFDCB4;
+  border-radius: 8px;
+  border-radius: 15px;
+}
