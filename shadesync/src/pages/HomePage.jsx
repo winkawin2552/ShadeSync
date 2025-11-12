@@ -57,6 +57,7 @@ function HomePage() {
           onPointsChange={setPoints}
           flyToCoords={flyToCoords}
           userLocation={userLocation}
+          onGoToLocation={handleGoToLocation}
         />
       </div>
       <div>
