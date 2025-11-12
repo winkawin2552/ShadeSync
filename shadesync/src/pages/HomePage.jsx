@@ -68,6 +68,7 @@ function HomePage() {
         Clear All
         </button>
       </div>
+      <h1 style = {{color: "#595959" , fontFamily: 'agdasima bold,monospace',fontSize:"1.5rem" ,paddingleft: "100px"}}>Coverage area analysis</h1>
     </main>
   );
 }
