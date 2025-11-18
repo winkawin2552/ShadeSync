@@ -1,7 +1,8 @@
 /* Copy-paste these styles from homePage.module.css */
 
 .header {
-  border-bottom: 0.25rem solid #f3f2f2;
+  height: 50px;
+  box-shadow: 0 6px 4px rgba(0, 0, 0, 0.2);
   padding: 0.9375rem; /* 15px */
   display: flex;
   align-items: center;
@@ -15,12 +16,16 @@
 }
 
 .logo {
-  height: 3rem;
-  border-radius: 0.6rem;
+  height: 4rem;
+  border-radius: 1.2rem;
   display: block;
+  padding: 5px;
 }
 
 .font_head {
-  font-size: 1.5rem;
+  font-family: 'agdasima bold', monospace;
+  font-size: 2rem;
+  color : #4A64A2;
   margin: 0;
+  padding: 3px;
 }

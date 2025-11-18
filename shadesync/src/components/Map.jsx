@@ -5,7 +5,9 @@ import {
   Polygon,
   Marker,
   useMap,
+  ZoomControl,
 } from "react-leaflet";
+import L from "leaflet";
 import MapEvents from "./MapEvents";
 import styles from "./map.module.css";
 
@@ -19,7 +21,33 @@ function ChangeView({ center, zoom }) {
   return null;
 }
 
-function Map({ points, onPointsChange, flyToCoords }) {
+function LocationButton({ onGoToLocation }) {
+  const map = useMap();
+
+  useEffect(() => {
+    const button = L.control({ position: "topleft" });
+    button.onAdd = function (map) {
+      const div = L.DomUtil.create("div", styles.locationControl);
+      div.innerHTML = `
+        <button class="${styles.locationBtn}" title="Go to my location">
+          ⨁
+        </button>
+      `;
+      div.onclick = (e) => {
+        e.stopPropagation();
+        onGoToLocation();
+      };
+      return div;
+    };
+    button.addTo(map);
+
+    return () => button.remove();
+  }, [map, onGoToLocation]);
+
+  return null;
+}
+
+function Map({ points, onPointsChange, flyToCoords, userLocation, onGoToLocation }) {
   const initialPosition = [13.7563, 100.5018];
 
   const handleMapClick = (latlng) => {
@@ -28,10 +56,12 @@ function Map({ points, onPointsChange, flyToCoords }) {
   };
 
   return (
-    <MapContainer center={initialPosition} zoom={13} className={styles.map}>
+    <MapContainer center={initialPosition} zoom={13} className={styles.map} zoomControl={false}>
       <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" />
 
-      {/* This component will handle flying to the user's location */}
+      <ZoomControl position="topleft" />
+      {onGoToLocation && <LocationButton onGoToLocation={onGoToLocation} />}
+
       <ChangeView center={flyToCoords} />
 
       <MapEvents onMapClick={handleMapClick} />
@@ -39,6 +69,11 @@ function Map({ points, onPointsChange, flyToCoords }) {
       {points.map((pos, idx) => (
         <Marker key={idx} position={pos} />
       ))}
+
+      {userLocation && (
+        <Marker position={userLocation} title="Your Location" />
+      )}
+
       {points.length > 1 && <Polygon positions={points} color="purple" />}
     </MapContainer>
   );
