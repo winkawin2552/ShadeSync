@@ -10,7 +10,7 @@ function Navbar({ isOpen }) {
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="/ShadowDetect">Shadow Detect</a>
+          <a href="/Navigate">Navigation</a>
         </li>
         <li>
           <a href="/contact">Contact</a>
