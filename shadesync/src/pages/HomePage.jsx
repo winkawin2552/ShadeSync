@@ -104,6 +104,10 @@ function HomePage() {
       <div className={styles.happyContainer}>
         <div style={{width: 400, height: 32, top: 530, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 24, fontWeight: '700', lineHeight: 32, wordWrap: 'break-word'}}>Shadow Happiness Index</div>
         <div style={{width: 400, height: 40, top: 940, position: 'absolute', textAlign: 'center', color: '#DCFCE7', fontSize: 14, fontWeight: '400', wordWrap: 'break-word'}}>Discover livability through shade, temperature, and green spaces</div>
+        <div style={{width: 358, height: 88, left: 17, top: 1000, position: 'absolute', background: 'rgba(255, 255, 255, 0.20)', borderRadius: 12}}>
+          <div style={{width: 66, height: 36, left: 150, top: 18, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 30, fontWeight: '700', wordWrap: 'break-word'}}>87.2</div>
+          <div style={{width: 124, height: 20, left: 120, top: 55, position: 'absolute', textAlign: 'center', color: '#DCFCE7', fontSize: 14, fontWeight: '400', wordWrap: 'break-word'}}>Current Area Score</div>
+        </div>
       </div>
     </div>
   );
