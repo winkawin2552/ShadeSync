@@ -101,7 +101,10 @@ function HomePage() {
       <div className={styles.chartContainer}>
         <Bar data={data} options={options} />
       </div>
-      
+      <div className={styles.happyContainer}>
+        <div style={{width: 400, height: 32, top: 530, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 24, fontWeight: '700', lineHeight: 32, wordWrap: 'break-word'}}>Shadow Happiness Index</div>
+        <div style={{width: 400, height: 40, top: 940, position: 'absolute', textAlign: 'center', color: '#DCFCE7', fontSize: 14, fontWeight: '400', wordWrap: 'break-word'}}>Discover livability through shade, temperature, and green spaces</div>
+      </div>
     </div>
   );
 }
