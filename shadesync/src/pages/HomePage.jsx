@@ -71,9 +71,13 @@ function HomePage() {
       <h1 style = {{color: "#595959" , fontFamily: 'agdasima bold,monospace',fontSize:"1.5rem" ,paddingLeft: "20px",paddingTop: "30px"}}>Coverage area analysis</h1>
       <div className={styles.box1and2container}>
         <div className={styles.box1}>
-          <h1 style={{color: "#0077FF" , paddingLeft: "20px", paddingTop: "15px"}}>3.2 km</h1>
+          <h1 style={{width: 174, height: 19, left: 10, top: 588, position: 'absolute', textAlign: 'center', color: '#0077FF', fontSize: 12, fontWeight: '500', letterSpacing: 1.20, wordWrap: 'break-word'}}>Total coverage area</h1>
+          <h1 style={{width: 96, height: 19, left: 30, top: 555, position: 'absolute', textAlign: 'center', color: '#0077FF', fontSize: 24, fontWeight: '700', letterSpacing: 2.40, wordWrap: 'break-word'}}>3.2 Km</h1>
+          <h1 style={{width: 14, height: 19, left: 120, top: 550, position: 'absolute', textAlign: 'center', color: '#0077FF', fontSize: 16, fontWeight: '700', letterSpacing: 1.60, wordWrap: 'break-word'}}>2</h1>
         </div>
         <div className={styles.box2}>
+          <div style={{width: 174, height: 19, left: 180, top: 596, position: 'absolute', textAlign: 'center', color: '#D16506', fontSize: 12, fontWeight: '500', letterSpacing: 1.20, wordWrap: 'break-word'}}>Shadow area</div>
+          <div style={{width: 60, height: 19, left: 225, top: 571, position: 'absolute', textAlign: 'center', color: '#D16506', fontSize: 24, fontWeight: '700', letterSpacing: 2.40, wordWrap: 'break-word'}}>40%</div>
         </div>
       </div>
     </main>

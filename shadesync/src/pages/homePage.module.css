@@ -27,6 +27,7 @@
   font-size: 1.3rem;
   margin-top: 15px;
   box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
 }
 
 .analyzeButton:hover {
@@ -45,6 +46,7 @@
   font-size: 1.2rem;
   margin-top: 15px;
   box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
 }
 
 .clearButton:hover {
@@ -53,7 +55,6 @@
 
 .box1and2container {
   display: flex;
-  margin-top: 1rem;
   flex-grow: 0.5;
   background-color: #ffffff;
   gap: 15px;
