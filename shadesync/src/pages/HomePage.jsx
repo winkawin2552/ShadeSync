@@ -88,13 +88,13 @@ function HomePage() {
 
       <div className={styles.box1and2container}>
         <div className={styles.box1}>
-          <h1 style={{width: 174, height: 19, left: 10, top: 640, position: 'absolute', textAlign: 'center', color: '#0077FF', fontSize: 12, fontWeight: '500', letterSpacing: 1.20, wordWrap: 'break-word'}}>Total coverage area</h1>
-          <h1 style={{width: 96, height: 19, left: 30, top: 605, position: 'absolute', textAlign: 'center', color: '#0077FF', fontSize: 24, fontWeight: '700', letterSpacing: 2.40, wordWrap: 'break-word'}}>3.2 Km</h1>
-          <h1 style={{width: 14, height: 19, left: 120, top: 605, position: 'absolute', textAlign: 'center', color: '#0077FF', fontSize: 16, fontWeight: '700', letterSpacing: 1.60, wordWrap: 'break-word'}}>2</h1>
-        </div>
+          <h1 style={{width: 14, height: 19, position: 'absolute',paddingLeft: '110px', fontSize: 16, fontWeight: '700', letterSpacing: 1.60}}>2</h1>
+          <h1 style={{width: 96, height: 19, position: 'static',paddingLeft: '20px', fontSize: 24, fontWeight: '700', letterSpacing: 2.40}}>3.2 Km</h1>
+          <h1 style={{width: 174, height: 19, position: 'static', fontSize: 12, fontWeight: '500', letterSpacing: 1.20}}>Total coverage area</h1>
+          </div>
         <div className={styles.box2}>
-          <div style={{width: 174, height: 19, left: 180, top: 648, position: 'absolute', textAlign: 'center', color: '#D16506', fontSize: 12, fontWeight: '500', letterSpacing: 1.20, wordWrap: 'break-word'}}>Shadow area</div>
-          <div style={{width: 60, height: 19, left: 225, top: 621, position: 'absolute', textAlign: 'center', color: '#D16506', fontSize: 24, fontWeight: '700', letterSpacing: 2.40, wordWrap: 'break-word'}}>40%</div>  
+          <h1 style={{width: 60, height: 19,paddingLeft: '20px' , textAlign: 'center', fontSize: 24, fontWeight: '700', letterSpacing: 2.40, wordWrap: 'break-word'}}>40%</h1>  
+          <h1 style={{width: 174, height: 19,paddingLeft: '23px', textAlign: 'left', fontSize: 12, fontWeight: '500', letterSpacing: 1.20, wordWrap: 'break-word'}}>Shadow area</h1>
         </div>
       </div>
 
