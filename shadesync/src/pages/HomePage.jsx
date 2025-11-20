@@ -62,7 +62,7 @@ function HomePage() {
   };
 
   return (
-    <div style={{ width: "100%", minHeight: "100vh", backgroundColor: "#ffffffff" }}>
+    <div style={{ width: "100%", minHeight: "150vh", backgroundColor: "#ffffffff" }}>
       <div className={styles.circle}>
         <h5 style={{ color: "#595959", paddingLeft: "38px", marginTop: "4.5px" }}>AnalyzingReady</h5>
       </div>
@@ -102,12 +102,11 @@ function HomePage() {
         <Bar data={data} options={options} />
       </div>
       <div className={styles.happyContainer}>
-        <div style={{width: 400, height: 32, top: 530, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 24, fontWeight: '700', lineHeight: 32, wordWrap: 'break-word'}}>Shadow Happiness Index</div>
-        <div style={{width: 400, height: 40, top: 940, position: 'absolute', textAlign: 'center', color: '#DCFCE7', fontSize: 14, fontWeight: '400', wordWrap: 'break-word'}}>Discover livability through shade, temperature, and green spaces</div>
-        <div style={{width: 358, height: 88, left: 17, top: 1000, position: 'absolute', background: 'rgba(255, 255, 255, 0.20)', borderRadius: 12}}>
-          <div style={{width: 66, height: 36, left: 150, top: 18, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 30, fontWeight: '700', wordWrap: 'break-word'}}>87.2</div>
-          <div style={{width: 124, height: 20, left: 120, top: 55, position: 'absolute', textAlign: 'center', color: '#DCFCE7', fontSize: 14, fontWeight: '400', wordWrap: 'break-word'}}>Current Area Score</div>
-        </div>
+        <div style={{width: 400, height: 32,  position: 'absolute',paddingBottom: '150px',textAlign: 'center', color: '#ffffffff', fontSize: 24, fontWeight: '700', wordWrap: 'break-word'}}>Shadow Happiness Index</div>
+        <div style={{width: 400, height: 40,  position: 'absolute',paddingBottom: '60px', textAlign: 'center', color: '#ffffffff', fontSize: 14, fontWeight: '400', wordWrap: 'break-word'}}>Discover livability through shade, temperature, and green spaces</div>
+        <div style={{width: '90%', height: 88, position: 'absolute', marginTop: '100px', background: 'rgba(255, 255, 255, 0.20)', borderRadius: 12}}></div>
+        <div style={{width: 66, height: 36, position: 'absolute',paddingTop: '80px', textAlign: 'center', color: 'white', fontSize: 30, fontWeight: '700', wordWrap: 'break-word'}}>87.2</div>
+        <div style={{width: 124, height: 20, position: 'absolute',paddingTop: '140px', textAlign: 'center', color: '#ffffffff', fontSize: 14, fontWeight: '400', wordWrap: 'break-word'}}>Current Area Score</div>
       </div>
     </div>
   );
