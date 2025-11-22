@@ -1,8 +1,11 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 node_modules/
 **/node_modules/
 .DS_Store
 *.log
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 *.txt
