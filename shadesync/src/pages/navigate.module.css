@@ -5,3 +5,23 @@
   background-color: #ffffff;
   height: 300px;
 }
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 20px;
+  background-color: #ffffff;
+}
+
+.searchInput {
+  background-color: #B8B8B8;
+  width: 400px;
+  height: 45px;
+  padding: 0 15px;
+  border: None;
+  border-radius: 8px;
+  font-family: 'agdasima bold', monospace;
+  font-size: 1rem;
+  outline: none;
+}

@@ -6,6 +6,7 @@ function Navigate() {
   const [points, setPoints] = useState([]);
   const [flyToCoords, setFlyToCoords] = useState(null);
   const [userLocation, setUserLocation] = useState(null);
+  const [searchValue, setSearchValue] = useState("");
 
   const handleGoToLocation = () => {
     if (navigator.geolocation) {
@@ -26,12 +27,27 @@ function Navigate() {
     }
   };
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log("Searching for:", searchValue);
+    // Add search functionality here
+  };
 
   return (
-    <div
-      style={{width: "100%",minHeight: "1400px",backgroundColor: "#ffffffff", }}>
-      <h1 style={{color: "#595959", textAlign: 'center',fontFamily: 'agdasima bold, monospace'}}>Shade Navigaton</h1>
-      <h5 style={{color: "#595959", textAlign: 'center',fontWeight: '500'}}>Go everywhere with shade</h5>
+    <div style={{ width: "100%", minHeight: "1400px", backgroundColor: "#ffffffff" }}>
+      <h1 style={{color: "#595959",textAlign: "center",fontFamily: "agdasima bold, monospace",}}>Shade Navigation </h1>
+      <h5 style={{color: "#595959",textAlign: "center",fontWeight: "500",}}> Go everywhere with shade</h5>
+
+      <form onSubmit={handleSearch} className={styles.searchContainer}>
+        <input
+          type="text"
+          className={styles.searchInput}
+          placeholder="🔍 Search the location"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+      </form>
+
       <div className={styles.mapContainer}>
         <Map
           points={points}
