@@ -1,0 +1,7 @@
+.mapContainer {
+  flex-grow: 0.5;
+  padding-Left: 1rem;
+  padding-Right: 1rem;
+  background-color: #ffffff;
+  height: 300px;
+}
