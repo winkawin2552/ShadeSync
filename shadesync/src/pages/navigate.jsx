@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Map from "../components/Map";
 import styles from "./navigate.module.css";
+import glass from "../assets/glass.png";
 
 function Navigate() {
   const [points, setPoints] = useState([]);
@@ -42,10 +43,11 @@ function Navigate() {
         <input
           type="text"
           className={styles.searchInput}
-          placeholder="🔍 Search the location"
+          placeholder="Search the location"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
+        <img src={glass} className={styles.glass}/>
       </form>
 
       <div className={styles.mapContainer}>
@@ -56,6 +58,22 @@ function Navigate() {
           userLocation={userLocation}
           onGoToLocation={handleGoToLocation}
         />
+        <button className={styles.confirm}>
+          <h4>Confirm Location</h4>
+        </button>
+      </div>
+    
+      <h1 style={{paddingTop: "100px",paddingLeft: "17px",fontFamily: 'agdasima bold, monospace', fontSize: "2rem", fontWeight: 600, color: "#595959", letterSpacing: "1px"}}>Result</h1>
+      <div className={styles.resultcontainer}>
+        <div className={styles.result1}>
+          
+        </div>
+        <div className={styles.result1}>
+
+        </div>
+        <div className={styles.result1}>
+
+        </div>
       </div>
     </div>
   );
