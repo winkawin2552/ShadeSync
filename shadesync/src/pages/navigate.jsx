@@ -9,6 +9,11 @@ function Navigate() {
   const [userLocation, setUserLocation] = useState(null);
   const [searchValue, setSearchValue] = useState("");
 
+  const handleClear = () => {
+    setPoints([]);
+    setUserLocation(null);
+  };
+
   const handleGoToLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -58,9 +63,14 @@ function Navigate() {
           userLocation={userLocation}
           onGoToLocation={handleGoToLocation}
         />
-        <button className={styles.confirm}>
-          <h4>Confirm Location</h4>
-        </button>
+        <div style={{ display: "flex", gap: "10px", padding: "10px" }}>
+          <button className={styles.confirm}>
+            <h4>Confirm Location</h4>
+          </button>
+          <button onClick={handleClear} className={styles.clearButton}>
+            X
+          </button>
+        </div>
       </div>
     
       <h1 style={{paddingTop: "100px",paddingLeft: "17px",fontFamily: 'agdasima bold, monospace', fontSize: "2rem", fontWeight: 600, color: "#595959", letterSpacing: "1px"}}>Result</h1>

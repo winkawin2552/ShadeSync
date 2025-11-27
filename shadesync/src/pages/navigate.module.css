@@ -42,7 +42,7 @@
   justify-content: center;
   align-items: center;
   background-color: #65FF86;
-  width: 100%;
+  width: 85%;
   height: 50px;
   margin: 20px auto;
   border-radius: 8px;
@@ -80,3 +80,20 @@
   box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
 }
 
+.clearButton {
+  background-color: #FD4747;
+  color: #ffffff;
+  width : 15%;
+  height: 50px;
+  margin: 20px auto;
+  border-radius: 6px;
+  border: none;
+  font-family: 'agdasima bold',monospace;
+  font-size: 1.2rem;
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+}
+
+.clearButton:hover {
+  background-color: #a02b2b;
+}

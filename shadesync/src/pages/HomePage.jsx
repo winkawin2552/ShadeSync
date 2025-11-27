@@ -114,7 +114,7 @@ function HomePage() {
         ⚡Energy Prediction
       </h1>
       <div className={styles.energy}>
-        <h1 style={{width: 14, height: 19, position: 'absolute',paddingLeft: '260px', fontWeight: '700', letterSpacing: 1.60}}>12%</h1>
+        <h1 style={{width: 14, height: 19,position: 'absolute',paddingLeft: '260px', fontWeight: '700', letterSpacing: 1.60}}>12%</h1>
         <h1 style={{width: 96, height: 19, position: 'static',paddingLeft: '20px', fontSize: 26, fontWeight: '700', letterSpacing: 2.40}}>1880</h1>
         <h1 style={{width: 174, height: 19, position: 'absolute',marginTop: '45px',marginLeft: '25px', fontSize: 12, fontWeight: '500', letterSpacing: 1.20}}>Energy reduce kWh</h1>
       </div>
