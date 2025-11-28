@@ -62,7 +62,7 @@ function HomePage() {
   };
 
   return (
-    <div style={{ width: "100%", minHeight: "150vh", backgroundColor: "#ffffffff" }}>
+    <div style={{ width: "100%", minHeight: "1400px", backgroundColor: "#ffffffff" }}>
       <div className={styles.circle}>
         <h5 style={{ color: "#595959", paddingLeft: "38px", marginTop: "4.5px" }}>AnalyzingReady</h5>
       </div>
@@ -101,12 +101,28 @@ function HomePage() {
       <div className={styles.chartContainer}>
         <Bar data={data} options={options} />
       </div>
+      
       <div className={styles.happyContainer}>
         <div style={{width: 400, height: 32,  position: 'absolute',paddingBottom: '150px',textAlign: 'center', color: '#ffffffff', fontSize: 24, fontWeight: '700', wordWrap: 'break-word'}}>Shadow Happiness Index</div>
         <div style={{width: 400, height: 40,  position: 'absolute',paddingBottom: '60px', textAlign: 'center', color: '#ffffffff', fontSize: 14, fontWeight: '400', wordWrap: 'break-word'}}>Discover livability through shade, temperature, and green spaces</div>
         <div style={{width: '90%', height: 88, position: 'absolute', marginTop: '100px', background: 'rgba(255, 255, 255, 0.20)', borderRadius: 12}}></div>
         <div style={{width: 66, height: 36, position: 'absolute',paddingTop: '80px', textAlign: 'center', color: 'white', fontSize: 30, fontWeight: '700', wordWrap: 'break-word'}}>87.2</div>
         <div style={{width: 124, height: 20, position: 'absolute',paddingTop: '140px', textAlign: 'center', color: '#ffffffff', fontSize: 14, fontWeight: '400', wordWrap: 'break-word'}}>Current Area Score</div>
+      </div>
+      
+      <h1 style={{ color: "#595959", fontFamily: 'agdasima bold, monospace', fontSize: "1.5rem", paddingLeft: "20px", paddingTop: "20px" }}>
+        ⚡Energy Prediction
+      </h1>
+      <div className={styles.energy}>
+        <h1 style={{width: 14, height: 19,position: 'absolute',paddingLeft: '260px', fontWeight: '700', letterSpacing: 1.60}}>12%</h1>
+        <h1 style={{width: 96, height: 19, position: 'static',paddingLeft: '20px', fontSize: 26, fontWeight: '700', letterSpacing: 2.40}}>1880</h1>
+        <h1 style={{width: 174, height: 19, position: 'absolute',marginTop: '45px',marginLeft: '25px', fontSize: 12, fontWeight: '500', letterSpacing: 1.20}}>Energy reduce kWh</h1>
+      </div>
+      <div className={styles.temp}>
+        <h1 style={{width: 14, height: 19, position: 'absolute',paddingLeft: '230px', fontWeight: '700', letterSpacing: 1.60}}>14.2%</h1>
+        <h1 style={{width: 14, height: 19, position: 'absolute',paddingLeft: '35px', fontSize: 16, fontWeight: '700', letterSpacing: 1.60}}>o</h1>
+        <h1 style={{width: 96, height: 19, position: 'static',paddingLeft: '20px', fontSize: 26, fontWeight: '700', letterSpacing: 1}}>5 C</h1>
+        <h1 style={{width: 174, height: 19, position: 'absolute',marginTop: '45px',marginLeft: '20px', fontSize: 12, fontWeight: '500', letterSpacing: 1.20}}>Temperature reduce</h1>
       </div>
     </div>
   );
