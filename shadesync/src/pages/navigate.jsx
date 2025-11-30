@@ -63,7 +63,7 @@ function Navigate() {
           userLocation={userLocation}
           onGoToLocation={handleGoToLocation}
         />
-        <div style={{ display: "flex", gap: "10px", padding: "10px" }}>
+        <div style={{ display: "flex", gap: "10px" }}>
           <button className={styles.confirm}>
             <h4>Confirm Location</h4>
           </button>
