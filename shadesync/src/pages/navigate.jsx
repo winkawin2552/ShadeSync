@@ -115,7 +115,7 @@ function Navigate() {
             </button>
             <button class={styles.startbut}>
               <img src={start} className={styles.start}/>
-              <span style={{paddingLeft: '10px',fontFamily: "agdasima bold, monospace",color:'#ffffffff',fontWeight:700}}>Start</span>
+              <span style={{fontFamily: "agdasima bold, monospace",color:'#ffffffff',fontWeight:700}}>Start</span>
             </button>
           </div>
         ))}
