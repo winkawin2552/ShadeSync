@@ -127,16 +127,24 @@
 }
 
 .startbut{
+  display: flex;
+  position: absolute;
+  top:60px;
+  right: 15px;
   width: 30%;
-  height: 20px;
+  height: 30px;
+  border-radius: 20px;
   background-color: #398CEB;
+  border: none;
+  align-items: center;
+  justify-content: center;
 }
 
 .start{
   width: 25px;
   height : 25px;
   position : absolute;
-  justify-content: Left;
-  padding-top: 10px;
-  padding-left: 15px;
+  align-items: center;
+  justify-content: center;
+  padding-right: 50px;
 }
