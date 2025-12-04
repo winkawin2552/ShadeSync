@@ -62,7 +62,7 @@ function HomePage() {
   };
 
   return (
-    <div style={{ width: "100%", minHeight: "1400px", backgroundColor: "#ffffffff" }}>
+    <div style={{ width: "100%", minHeight: "100vh", backgroundColor: "#ffffffff" ,paddingBottom:"80px"}}>
       <div className={styles.circle}>
         <h5 style={{ color: "#595959", paddingLeft: "38px", marginTop: "4.5px" }}>AnalyzingReady</h5>
       </div>

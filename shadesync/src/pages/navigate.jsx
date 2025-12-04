@@ -46,7 +46,7 @@ function Navigate() {
   };
 
   return (
-    <div style={{ width: "100%", minHeight: "1400px", backgroundColor: "#ffffffff" }}>
+    <div style={{ width: "100%", minHeight: "100vh", backgroundColor: "#ffffffff" ,paddingBottom:"80px"}}>
       <h1 style={{ color: "#595959", textAlign: "center", fontFamily: "agdasima bold, monospace" }}>
         Shade Navigation
       </h1>
