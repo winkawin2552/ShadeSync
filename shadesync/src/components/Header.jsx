@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 
 import styles from "./header.module.css";
 import logo from "../assets/logo(1).png";
+import Newlogo from "../assets/Newlogo.png";
 import Hamburger from "./Hamburger";
 import Navbar from "./Navbar";
 
@@ -20,8 +21,7 @@ function Header() {
       break;
 
     default:
-      currentLogo = logo;
-      currentTitle = "ShadeSync";
+      currentLogo = Newlogo;
   }
 
   const handleNavClick = () => {
