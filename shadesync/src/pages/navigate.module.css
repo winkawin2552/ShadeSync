@@ -152,7 +152,7 @@
 .searchDropdown {
   width: 90%;
   margin: 0 auto;
-  background: white;
+  background: rgb(236, 236, 236);
   border: 1px solid #ddd;
   border-radius: 10px;
   max-height: 200px;
@@ -170,5 +170,5 @@
 }
 
 .searchItem:hover {
-  background: #f3f3f3;
+  background: #bcbcbc;
 }
