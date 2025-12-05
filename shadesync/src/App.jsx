@@ -12,9 +12,9 @@ function App() {
         <Header />
          <NewNav />
         <Routes>
-          <Route index element={<HomePage />} />
+          <Route path="/HomePage" element={<HomePage />} />
           <Route path="/ShadowDetect" element={<ShadowDetect />} />
-          <Route path="/navigate" element={<Navigate />} />
+          <Route path="/" element={<Navigate />} />
         </Routes>
       </BrowserRouter>
     </>

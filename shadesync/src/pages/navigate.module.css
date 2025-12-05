@@ -126,6 +126,10 @@
   font-weight: 700;
 }
 
+.delete:hover {
+  background-color: #a02b2b;
+}
+
 .startbut{
   display: flex;
   position: absolute;
@@ -138,6 +142,10 @@
   border: none;
   align-items: center;
   justify-content: center;
+}
+
+.startbut:hover{
+  background-color: #2c6bb8;
 }
 
 .start{

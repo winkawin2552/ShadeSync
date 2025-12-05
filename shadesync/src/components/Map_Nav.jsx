@@ -9,7 +9,7 @@ import {
 import L from "leaflet";
 import MapEvents from "./MapEvents";
 import styles from "./map.module.css";
-import locationIcon from "../assets/location.png";
+import locationIcon from "../assets/location.png";  
 
 function ChangeView({ center, zoom }) {
   const map = useMap();

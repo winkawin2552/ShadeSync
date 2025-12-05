@@ -8,15 +8,15 @@ export default function NewNav() {
   const navigate = useNavigate();
 
   const handleAnalyzeClick = () => {
-    navigate("/");
+    navigate("/HomePage");
   };
 
   const handlemapClick = () => {
-    navigate("/Navigate");
+    navigate("/");
   };
 
   const handlebuildingClick = () => {
-    navigate("/");
+    navigate("/building");
   };
 
   return (
