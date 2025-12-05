@@ -35,7 +35,6 @@ function Navigate() {
         (position) => {
           const { latitude, longitude } = position.coords;
           const coords = [latitude, longitude];
-          setUserLocation(coords);
           setFlyToCoords(coords);
         },
         () => alert("Enable location services first!")
@@ -44,14 +43,25 @@ function Navigate() {
   };
 
   // CONFIRM
-  const handleConfirm = () => {
-    if (!destination) return alert("Please select a destination.");
-    if (!userLocation) return alert("Please get your current location first.");
+const handleConfirm = () => {
+  if (!destination) return alert("Please select a destination first.");
 
-    alert(
-      `Confirmed!\nYour location: ${userLocation}\nDestination: ${destination}`
-    );
-  };
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const { latitude, longitude } = position.coords;
+      const userCoords = [latitude, longitude];
+
+      setUserLocation(userCoords);     // ⭐ ให้ map ใช้ได้จริง
+      setConfirmTrigger(Date.now());   // ⭐ ยิงสัญญาณไป Map_nav ให้ fetchRoute
+
+      alert(
+        `Confirmed!\nUser: ${userCoords}\nDestination: ${destination}`
+      );
+    },
+    () => alert("Enable location services")
+  );
+};
+
 
   // SEARCH (FREE) — Nominatim API
   const handleSearch = async (e) => {
@@ -149,12 +159,14 @@ function Navigate() {
       {/* MAP + BUTTONS */}
       <div className={styles.mapContainer}>
         <Map_nav
-          userLocation={userLocation}
-          destination={destination}
-          setDestination={setDestination}
-          flyToCoords={flyToCoords}
-          onGoToLocation={handleGoToLocation}
-        />
+  userLocation={userLocation}
+  destination={destination}
+  setDestination={setDestination}
+  flyToCoords={flyToCoords}
+  onGoToLocation={handleGoToLocation}
+  onClick={handleConfirm}   // ⭐ ส่ง trigger ให้ map
+/>
+
 
         <div style={{ display: "flex", gap: "10px" }}>
           <button className={styles.confirm} onClick={handleConfirm}>

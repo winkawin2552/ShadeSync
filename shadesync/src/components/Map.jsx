@@ -40,7 +40,7 @@ function LocationButton({ onGoToLocation }) {
       `;
       div.onclick = (e) => {
         e.stopPropagation();
-        onGoToLocation();
+        onGoToLocation();  // ⭐ แค่เรียก flyTo เท่านั้น
       };
       return div;
     };
@@ -75,9 +75,12 @@ function Map({ points, onPointsChange, flyToCoords, userLocation, onGoToLocation
         <Marker key={idx} position={pos} />
       ))}
 
+      {/* ❌ ลบ Marker ของ userLocation ออก (ไม่แสดง pin ตอนกด MyLocation) */}
+      {/* 
       {userLocation && (
         <Marker position={userLocation} title="Your Location" />
       )}
+      */}
 
       {points.length > 1 && <Polygon positions={points} color="purple" />}
     </MapContainer>
