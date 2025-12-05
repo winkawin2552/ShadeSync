@@ -148,3 +148,27 @@
   justify-content: center;
   left: 10px;
 }
+
+.searchDropdown {
+  width: 90%;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: -10px;
+  z-index: 9999;
+  position: relative;
+}
+
+.searchItem {
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: agdasima bold, monospace;
+  border-bottom: 1px solid #eee;
+}
+
+.searchItem:hover {
+  background: #f3f3f3;
+}
