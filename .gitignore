@@ -10,3 +10,4 @@ node_modules/
 >>>>>>> Stashed changes
 *.txt
 backend/
+API/api_key_google_map.py
