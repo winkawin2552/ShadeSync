@@ -74,7 +74,8 @@ function Navigate() {
         try {
           setLoadingRoute(true);
 
-          const res = await fetch("http://127.0.0.1:8000/route/shadow-score", {
+          //http://127.0.0.1:8000/route/shadow-score
+          const res = await fetch("/api/route/shadow-score", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -88,7 +89,13 @@ function Navigate() {
           const data = await res.json();
 
           if (data.routes) {
-            const colors = ["#FF5733", "#33FF57", "#3357FF", "#F39C12", "#9B59B6"];
+            const colors = [
+              "#FF5733",
+              "#33FF57",
+              "#3357FF",
+              "#F39C12",
+              "#9B59B6",
+            ];
             const formatted = data.routes.map((r, index) => ({
               id: index + 1,
               time: r.duration_text,
@@ -214,7 +221,14 @@ function Navigate() {
           onGoToLocation={handleGoToLocation}
           routes={
             activeRoute
-              ? [{ polyline: activeRoute, color: results.find(r => r.polyline === activeRoute)?.color || "#FF5733" }]
+              ? [
+                  {
+                    polyline: activeRoute,
+                    color:
+                      results.find((r) => r.polyline === activeRoute)?.color ||
+                      "#FF5733",
+                  },
+                ]
               : results.map((r) => ({ polyline: r.polyline, color: r.color }))
           }
         />
@@ -255,7 +269,9 @@ function Navigate() {
           Loading routes...
         </p>
       )}
-      {apiError && <p style={{ paddingLeft: "16px", color: "red" }}>{apiError}</p>}
+      {apiError && (
+        <p style={{ paddingLeft: "16px", color: "red" }}>{apiError}</p>
+      )}
 
       <div className={styles.resultcontainer}>
         {results.map((item) => (
@@ -287,7 +303,9 @@ function Navigate() {
               >
                 Shade
               </h2>
-              <h2 style={{ paddingLeft: "17px", color: "#000000" }}>{item.shade}</h2>
+              <h2 style={{ paddingLeft: "17px", color: "#000000" }}>
+                {item.shade}
+              </h2>
             </div>
 
             <button
