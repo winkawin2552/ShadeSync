@@ -1,0 +1,10 @@
+[Backend]--------------------------
+cd C:\Code\ShadeSync\API
+python -m uvicorn api:app --reload
+
+[Frontend]-------------------------
+cd C:\Code\ShadeSync\shadesync
+npm run dev
+
+[Link]-----------------------------
+http://localhost:5173
