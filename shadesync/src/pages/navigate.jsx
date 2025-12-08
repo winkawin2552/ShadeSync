@@ -9,7 +9,6 @@ function Navigate() {
   const [userLocation, setUserLocation] = useState(null);
   const [destination, setDestination] = useState(null);
   const [searchValue, setSearchValue] = useState("");
-
   const [searchResults, setSearchResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -20,7 +19,7 @@ function Navigate() {
 
   // Routes from backend
   const [results, setResults] = useState([]);
-  const [activeRoute, setActiveRoute] = useState(null); // ✅ เส้นทางที่ Start
+  const [activeRoute, setActiveRoute] = useState(null);
 
   /* ===============================
      Clear
@@ -31,7 +30,7 @@ function Navigate() {
     setResults([]);
     setFlyToCoords(null);
     setSearchValue("");
-    setActiveRoute(null); // ✅ เคลียร์เส้นทางที่เลือก
+    setActiveRoute(null);
   };
 
   /* ===============================
@@ -89,16 +88,18 @@ function Navigate() {
           const data = await res.json();
 
           if (data.routes) {
+            const colors = ["#FF5733", "#33FF57", "#3357FF", "#F39C12", "#9B59B6"];
             const formatted = data.routes.map((r, index) => ({
               id: index + 1,
               time: r.duration_text,
               dis: `${(r.distance_m / 1000).toFixed(1)} km`,
               shade: `${r.shadow_score}%`,
               polyline: r.polyline,
+              color: colors[index % colors.length],
             }));
 
             setResults(formatted);
-            setActiveRoute(null); // ✅ เคลียร์เส้นทางเดิมเมื่อ Confirm ใหม่
+            setActiveRoute(null);
           }
         } catch (err) {
           console.error(err);
@@ -211,7 +212,11 @@ function Navigate() {
           setDestination={setDestination}
           flyToCoords={flyToCoords}
           onGoToLocation={handleGoToLocation}
-          routes={activeRoute ? [activeRoute] : results.map((r) => r.polyline)}
+          routes={
+            activeRoute
+              ? [{ polyline: activeRoute, color: results.find(r => r.polyline === activeRoute)?.color || "#FF5733" }]
+              : results.map((r) => ({ polyline: r.polyline, color: r.color }))
+          }
         />
 
         <div style={{ display: "flex", gap: "10px" }}>
@@ -254,7 +259,11 @@ function Navigate() {
 
       <div className={styles.resultcontainer}>
         {results.map((item) => (
-          <div key={item.id} className={styles.result1}>
+          <div
+            key={item.id}
+            className={styles.result1}
+            style={{ borderLeft: `5px solid ${item.color}` }}
+          >
             <div className={styles.timeContainer}>
               <h2
                 style={{
@@ -273,16 +282,14 @@ function Navigate() {
                 style={{
                   paddingLeft: "17px",
                   fontFamily: "agdasima bold, monospace",
-                  color: "#2BBB4A",
+                  color: "#2BBB4A ",
                 }}
               >
                 Shade
               </h2>
-              <h2 style={{ paddingLeft: "17px" }}>{item.shade}</h2>
+              <h2 style={{ paddingLeft: "17px", color: "#000000" }}>{item.shade}</h2>
             </div>
 
-
-            {/* ปุ่ม Start */}
             <button
               className={styles.startbut}
               onClick={() => setActiveRoute(item.polyline)}

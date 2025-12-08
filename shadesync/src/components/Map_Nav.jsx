@@ -74,16 +74,16 @@ function RoutesFromApi({ routes }) {
     if (!routes || routes.length === 0) return;
 
     const bounds = L.latLngBounds([]);
-    const colors = ["#FD4747", "#47FD85", "#4747FD", "#FDB947", "#FD47D2"];
 
-    routes.forEach((routeCoords, index) => {
-      if (routeCoords.length > 0) {
-        const polyline = L.polyline(routeCoords, {
-          color: colors[index % colors.length],
+    routes.forEach((routeObj, index) => {
+      const { polyline, color } = routeObj;
+      if (polyline && polyline.length > 0) {
+        const polylineLayer = L.polyline(polyline, {
+          color: color || "#FD4747",
           weight: 5,
         }).addTo(map);
 
-        bounds.extend(polyline.getBounds());
+        bounds.extend(polylineLayer.getBounds());
       }
     });
 
@@ -95,7 +95,6 @@ function RoutesFromApi({ routes }) {
   return null;
 }
 
-
 // --------------------
 // Main Map Component
 // --------------------
@@ -105,7 +104,7 @@ function Map_nav({
   setDestination,
   flyToCoords,
   onGoToLocation,
-  routes, // ✅ array ของ array [[lat,lng], [lat,lng], ...]
+  routes, // array ของ object { polyline, color }
 }) {
   const defaultCenter = [13.7563, 100.5018];
 
