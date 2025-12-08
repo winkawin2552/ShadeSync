@@ -8,20 +8,28 @@ import {
 } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import "leaflet-routing-machine";
-import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 import MapEvents from "./MapEvents";
 import styles from "./map.module.css";
 import locationIcon from "../assets/location.png";
 
+// --------------------
+// Fly to location
+// --------------------
 function ChangeView({ center, zoom }) {
   const map = useMap();
+
   useEffect(() => {
-    if (center) map.flyTo(center, zoom || 17);
+    if (center) {
+      map.flyTo(center, zoom || 17);
+    }
   }, [center, zoom, map]);
+
   return null;
 }
 
+// --------------------
+// Location button
+// --------------------
 function LocationButton({ onGoToLocation }) {
   const map = useMap();
 
@@ -49,52 +57,55 @@ function LocationButton({ onGoToLocation }) {
   return null;
 }
 
-function Routing({ userLocation, destination }) {
+// --------------------
+// Draw multiple polylines from API
+// --------------------
+function RoutesFromApi({ routes }) {
   const map = useMap();
 
   useEffect(() => {
-    if (!userLocation || !destination) return;
+    // ลบ polyline เก่า
+    map.eachLayer((layer) => {
+      if (layer instanceof L.Polyline) {
+        map.removeLayer(layer);
+      }
+    });
 
-    const routingControl = L.Routing.control({
-      waypoints: [
-        L.latLng(userLocation[0], userLocation[1]),
-        L.latLng(destination[0], destination[1]),
-      ],
-      lineOptions: {
-        styles: [{ color: "#FD4747", weight: 5 }],
-        addWaypoints: false,
-      },
-      routeWhileDragging: false,
+    if (!routes || routes.length === 0) return;
 
-      // ปิดการสร้าง marker อัตโนมัติ
-      createMarker: () => null,
+    const bounds = L.latLngBounds([]);
+    const colors = ["#FD4747", "#47FD85", "#4747FD", "#FDB947", "#FD47D2"];
 
-      // ปิด panel ด้วย option
-      show: false,
-      showAlternatives: false,
-      addWaypoints: false,
-    }).addTo(map);
+    routes.forEach((routeCoords, index) => {
+      if (routeCoords.length > 0) {
+        const polyline = L.polyline(routeCoords, {
+          color: colors[index % colors.length],
+          weight: 5,
+        }).addTo(map);
 
-    // ❗❗ ปิด panel แบบบังคับ ลบ DOM ทิ้งเลย
-    const panels = document.getElementsByClassName("leaflet-routing-container");
-    Array.from(panels).forEach((el) => el.style.display = "none");
+        bounds.extend(polyline.getBounds());
+      }
+    });
 
-    return () => {
-      map.removeControl(routingControl);
-    };
-  }, [userLocation, destination]);
+    if (bounds.isValid()) {
+      map.fitBounds(bounds);
+    }
+  }, [routes, map]);
 
   return null;
 }
 
 
-
+// --------------------
+// Main Map Component
+// --------------------
 function Map_nav({
   userLocation,
   destination,
   setDestination,
   flyToCoords,
   onGoToLocation,
+  routes, // ✅ array ของ array [[lat,lng], [lat,lng], ...]
 }) {
   const defaultCenter = [13.7563, 100.5018];
 
@@ -119,11 +130,11 @@ function Map_nav({
 
       <MapEvents onMapClick={handleMapClick} />
 
-      {destination && (
-        <Marker position={destination} title="Destination" />
-      )}
+      {/* Marker ปลายทาง */}
+      {destination && <Marker position={destination} />}
 
-      <Routing userLocation={userLocation} destination={destination} />
+      {/* วาดเส้นจาก Backend */}
+      <RoutesFromApi routes={routes} />
     </MapContainer>
   );
 }

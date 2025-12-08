@@ -1,4 +1,6 @@
 #uvicorn api:app --reload
+import os
+from fastapi.middleware.cors import CORSMiddleware
 
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -21,7 +23,16 @@ from api_key_google_map import API_KEY
 # -----------------------------
 app = FastAPI(title="ShadeSync API", version="1.0")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # อนุญาตทุก origin ชั่วคราว
+    allow_credentials=True,
+    allow_methods=["*"],  # อนุญาตทุก method
+    allow_headers=["*"],  # อนุญาตทุก header
+)
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+UNET_MODEL_PATH = os.path.join(BASE_DIR, "models", "shadesync_unet_model.pth")
 # -----------------------------
 # Request body model
 # -----------------------------
