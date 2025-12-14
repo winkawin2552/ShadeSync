@@ -1,4 +1,6 @@
-#uvicorn api:app --reload
+# uvicorn api:app --reload
+# ngrok http 5173
+# ngrok http --domain=helen-unfuelled-charlee.ngrok-free.dev 5173
 import os
 from fastapi.middleware.cors import CORSMiddleware
 
