@@ -77,11 +77,6 @@ ShadeSync analyzes satellite imagery and AI-based shadow detection to recommend 
 
 ---
 
-## 👥 Team
-- **Win**
-- **Parn**
-- **Guy**
-
 ---
 
 ## 🚀 Future Improvements
@@ -98,3 +93,4 @@ This project is for educational and research purposes.
 ---
 
 ✨ *ShadeSync — Choose comfort over distance.*
+
